@@ -1,0 +1,4 @@
+com\example\cloudhystrix\CloudHystrixApplication.class
+com\example\cloudhystrix\vo\UserVO.class
+com\example\cloudhystrix\config\RestTemplateConfig.class
+com\example\cloudhystrix\controller\HystrixController.class

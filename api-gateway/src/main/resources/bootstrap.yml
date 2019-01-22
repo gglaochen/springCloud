@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: api-gateway   #应用名称
+  cloud:
+    zookeeper:
+      discovery:
+        register: true  #是否注册到zk上，选是
+        enabled: true   #是否启用zk服务发现，选是
+      connect-string: 127.0.0.1:2181  #连接zk
+    config:
+      discovery:
+        service-id: config  #配置发现的服务名
+        enabled: true #启用配置发现
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  #显示所有的映射地址
+  server:
+    port: 5555  #定义一个路由地址，作为监控地址
+#自定义路由,隐藏真实的服务名称
+zuul:
+  routes:
+    configserver: #自定义名称,定义后原服务名不可用
+      path: /myConfig/**
+      serviceId: config
+    userserver: #自定义名称
+      path: /myUser/**
+      serviceId: cloud-provider
+  ignored-patterns: #忽略一部分的路由
+    - /gateway/**
+  sensitive-headers: #允许所有的敏感信息头，默认不允许cookie等，cookie在路由中经常使用
+#  ignore-local-service: true #忽略所有的路由
