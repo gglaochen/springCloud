@@ -1,0 +1,12 @@
+spring:
+  zipkin:
+    base-url: http://localhost:8001 #zipkin服务地址
+    sleuth:
+      sampler:
+        probability:  1 #抽样比例，100%
+    sender:
+      type: web #也可以是kafka\rabbitmq
+  application:
+    name: aaa
+server:
+  port: 8002

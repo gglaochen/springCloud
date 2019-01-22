@@ -1,0 +1,12 @@
+spring:
+  zipkin:
+    base-url: http://localhost:8001
+    sleuth:
+      sampler:
+        probability:  1
+    sender:
+      type: web
+  application:
+    name: ccc
+server:
+  port: 8004
