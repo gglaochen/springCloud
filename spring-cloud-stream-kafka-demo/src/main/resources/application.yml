@@ -1,0 +1,14 @@
+#生产者配置：
+spring:
+  kafka:
+    bootstrap-servers: 192.168.146.220:9092 #kafka服务端口号
+  cloud:
+    stream:
+      bindings:
+        output: #自定义下流名
+          destination:  ${kafka.topic}  #上流描述,kafka的topic
+        input: #自定义上流名
+          destination:  ${kafka.topic}  #上流描述,kafka的topic
+kafka:
+  topic:  cloud-stream
+#内置了key-value序列化器

@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination:  ${rabbitmq.queue}
+        input:
+          destination:  ${rabbitmq.queue}
+  rabbitmq:
+    host: 192.168.146.220
+    port: 5672
+    username: rabbit
+    password: rabbit
+rabbitmq:
+  queue:  cloud-stream-queue

@@ -1,0 +1,5 @@
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false #不自动请求，解决后台报错问题
