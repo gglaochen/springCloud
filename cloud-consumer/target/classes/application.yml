@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+      discovery:
+        register: false
+provider:
+    ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule  #负载策略默认为轮询，RandomRule随机访问

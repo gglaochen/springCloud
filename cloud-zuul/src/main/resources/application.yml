@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+zuul:
+  routes:
+    users:
+      path: /myService/**     #自定义路由名称
+      serviceId: cloud-provider #对应的路由服务
+ 

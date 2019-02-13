@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181  #不能把zk的配置写在git上，因为kz要复制注册配置信息
+      discovery:
+        register: true
+    config:
+      discovery:
+        enabled: true   #效果同在入口上加@EnableDiscoveryClient
+        service-id: config  #注册中心中节点的名称，
+      profile: dev  #git文件后缀名
+  application:
+    name: provider  #git文件的名称
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+logging:
+  level:
+    com.example.cloudprovider.mapper: debug

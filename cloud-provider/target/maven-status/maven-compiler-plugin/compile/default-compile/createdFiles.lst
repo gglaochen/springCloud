@@ -1,0 +1,7 @@
+com\example\cloudprovider\service\impl\UserServiceImpl.class
+com\example\cloudprovider\domain\UserInfo.class
+com\example\cloudprovider\mapper\UserInfoMapper.class
+com\example\cloudprovider\controller\ConfigController.class
+com\example\cloudprovider\service\UserService.class
+com\example\cloudprovider\CloudProviderApplication.class
+com\example\cloudprovider\controller\UserInfoController.class

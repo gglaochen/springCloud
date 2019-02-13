@@ -1,0 +1,8 @@
+#encrypt:   #对称算法
+#  key: asdf_1234
+encrypt:    #非对称算法
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mykey
+    secret: changeme

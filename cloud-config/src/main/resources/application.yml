@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181  #不能写到git上
+    config:
+      server:
+        git:
+          uri: https://github.com/gglaochen/cloud-test/
+          username: 925576956@qq.com
+          password: chenhanlin123
+  application:
+    name: config  #部署到zk的节点的名称
+  rabbitmq:       #不能写到git上
+    port: 5672
+    host: 192.168.146.220
+    username: rabbit
+    password: rabbit
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
